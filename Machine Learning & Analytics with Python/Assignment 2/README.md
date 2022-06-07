@@ -1,2 +1,2 @@
-1) Use inferential statistics and machine learning methods to create the best model for predicting the metric valence of spotify songs.
-2) Predict Valence using at least 3 Machine Learning Methods.
+1) Use inferential statistics and multiple linear regression to predict the metric valence of spotify songs.
+2) Use at least 3 Machine Learning Methods to predict the metric valence of spotify songs.
