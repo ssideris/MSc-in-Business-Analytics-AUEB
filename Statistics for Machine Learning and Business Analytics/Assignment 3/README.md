@@ -1,3 +1,2 @@
-Create a predictive model to classify whether a client will
-buy or not the new product as well as use specific variables to cluster the clients and to characterize the
-clusters.
+1) The first part aims at creating a predictive model to classify whether a client will buy or not the new product. You have to use at least 3 distinct methods and to assess how good are the predictions made by your models.
+2) Cluster the clients and characterize the clusters.
