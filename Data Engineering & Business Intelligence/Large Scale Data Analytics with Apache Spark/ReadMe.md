@@ -14,7 +14,7 @@
     "- [Task 2](#task2)\n",
     "- [Task 3](#task3)\n",
     "\n",
-    "**Task 1** <a class=\"anchor\" id=\"task1\"></a>\n",
+    "**Task 1**<a class=\"anchor\" id=\"task1\"></a>\n",
     "\n",
     "Your first task is to explore the dataset. You need to use SparkSQL with Dataframes in a Jupyter notebook that delivers the following:\n",
     "- It uses the json() function to load the dataset.\n",
@@ -143,7 +143,7 @@
    "id": "f5cac7e9",
    "metadata": {},
    "source": [
-    "**Task 2** <a class=\"anchor\" id=\"task2\"></a>\n",
+    "**Task 2**<a class=\"anchor\" id=\"task2\"></a>\n",
     "\n",
     "For this task you continue to work with SparkSQL. This time, you need to provide a Jupyter notebook (again using PySpark and Dataframes) that delivers the following:\n",
     "- It returns the “book_id” and “title” of the book with the largest “average_rating” that its title starts with the first letter of your last name.\n",
@@ -273,7 +273,7 @@
    "id": "2fe1f42a",
    "metadata": {},
    "source": [
-    "**Task 3** <a class=\"anchor\" id=\"task3\"></a>\n",
+    "**Task 3**<a class=\"anchor\" id=\"task3\"></a>\n",
     "\n",
     "As a final task, your supervisor assigned to you to investigate if it is possible to train a linear\n",
     "regression model (using LinearRegression() function) that could predict the “average_rating”\n",
