@@ -19,12 +19,9 @@
     "Your first task is to explore the dataset. You need to use SparkSQL with Dataframes in a Jupyter notebook that delivers the following:\n",
     "- It uses the json() function to load the dataset.\n",
     "- It counts and displays the number of books in the database.\n",
-    "- It counts and displays the number of e-books in the database (based on the “is_ebook”\n",
-    "field).\n",
-    "- It uses the summary() command to display basic statistics about the “average_rating”\n",
-    "field.\n",
-    "- It uses the groupby() and count() commands to display all distinct values in the\n",
-    "“format” field and their number of appearances"
+    "- It counts and displays the number of e-books in the database (based on the “is_ebook” field).\n",
+    "- It uses the summary() command to display basic statistics about the “average_rating field.\n",
+    "- It uses the groupby() and count() commands to display all distinct values in the “format” field and their number of appearances"
    ]
   },
   {
