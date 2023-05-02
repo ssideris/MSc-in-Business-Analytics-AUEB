@@ -53,7 +53,7 @@ Events generated have the following format:
 
 **1.  Create a student account**
 
-![image.png](attachment:image.png)
+![image.png](attachment:Images/Picture1.png)
 
 
 **2.  Set up an Event Hub**
