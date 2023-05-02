@@ -131,7 +131,7 @@ CALL {MATCH (r:Route)-[:ArrivesTo]->(airport:Airport)
       
 RETURN airport.Name AS `Airport Name`, COUNT(*) AS count
       
-    UNION
+UNION
       
 MATCH (r:Route)-[:DepartsFrom]->(airport:Airport)
       
@@ -224,7 +224,7 @@ WHERE(airport.Country = 'GREECE')
 
 RETURN  COUNT(*) AS count
 
-    UNION
+UNION
     
 MATCH (r:Route)-[:DepartsFrom]->(airport:Airport)
 
@@ -242,7 +242,7 @@ WHERE(airport.Country = 'GREECE')
 
 RETURN  airport.City AS City ,COUNT(*) AS `Flights Proportion`
 
-    UNION
+UNION
     
 MATCH (r:Route)-[:DepartsFrom]->(airport:Airport)
 
