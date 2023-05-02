@@ -58,104 +58,104 @@ Events generated have the following format:
 
 **2.  Set up an Event Hub**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture2.png)
 
-![image-2.png](attachment:image-2.png)
+![image.png](Images/Picture3.png)
 
 **3. Generate a Security Access Signature**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture4.png)
 
-![image-2.png](attachment:image-2.png)
+![image.png](Images/Picture5.png)
 
 **4. Edit the Generator.html (e.g., opened with Sublime) and update the Config variables.**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture6.png)
 
 **5. Feed the Event Hub with the use of Generator.html**
 
-![image-2.png](attachment:image-2.png)
+![image.png](Images/Picture7.png)
 
 **6. Set up a storage account.**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture8.png)
 
-![image-2.png](attachment:image-2.png)
+![image.png](Images/Picture9.png)
 
-![image-3.png](attachment:image-3.png)
+![image.png](Images/Picture10.png)
 
 **7. Upload the Reference Data files to our storage**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture11.png)
 
 **8. Set up a Stream Analytics Job**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture12.png)
 
-![image-2.png](attachment:image-2.png)
+![image.png](Images/Picture13.png)
 
 **9. Use the Event Hub & Reference Data Files as Input**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture14.png)
 
-![image-2.png](attachment:image-2.png)
+![image.png](Images/Picture15.png)
 
 The sampling Data of our Input
 
-![image-3.png](attachment:image-3.png)
+![image.png](Images/Picture16.png)
 
 Inputs after uploading all the reference data files
 
-![image-4.png](attachment:image-4.png)
+![image.png](Images/Picture17.png)
 
 **10. Create a Blob Storage Output**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture18.png)
 
 **QUERIES**
 
 **1. Show the total “Amount” of “Type = 0” transactions at “ATM Code = 21” of the last 10 minutes.
 Repeat as new events keep flowing in (use a sliding window).**
 
-![image-2.png](attachment:image-2.png)
+![image.png](Images/Picture19.png)
 
 **2. Show the total “Amount” of “Type = 1” transactions at “ATM Code = 21” of the last hour.
 Repeat once every hour (use a tumbling window).** 
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture20.png)
 
 **3. Show the total “Amount” of “Type = 1” transactions at “ATM Code = 21” of the last hour.
 Repeat once every 30 minutes (use a hopping window).**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture21.png)
 
 **4. Show the total “Amount” of “Type = 1” transactions per “ATM Code” of the last one hour (use
 a sliding window).**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture22.png)
 
 **5. Show the total “Amount” of “Type = 1” transactions per “Area Code” of the last hour. Repeat
 once every hour (use a tumbling window).**
 
 **Area Code of ATM**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture23.png)
 
 **Area Code of Customer**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture24.png)
 
 **6. Show the total “Amount” per ATM’s “City” and Customer’s “Gender” of the last hour. Repeat
 once every hour (use a tumbling window).**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture25.png)
 
 **7. Alert (Do a simple SELECT “1”) if a Customer has performed two transactions of “Type = 1” in a
 window of an hour (use a sliding window).**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture26.png)
 
 **8. Alert (Do a simple SELECT “1”) if the “Area Code” of the ATM of the transaction is not the same
 as the “Area Code” of the “Card Number” (Customer’s Area Code) - (use a sliding window)**
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture27.png)
