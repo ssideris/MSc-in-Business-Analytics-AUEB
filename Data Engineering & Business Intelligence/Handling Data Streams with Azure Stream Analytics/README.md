@@ -3,12 +3,9 @@ You are going to use Azure Stream Analytics to process a data stream of ATM tran
 stream queries. The schema of the stream is: (ATMCode, CardNumber, Type, Amount)
 1. Create a students account at: https://azure.microsoft.com/en-us/free/students/
 2. Setup an Event Hub.
-3. Generate a Security Access Signature (use a terminal with windows operationg system):
-https://github.com/sandrinodimattia/RedDog/releases
-4. Edit Generator.html (open with a text editor, e.g.: Sublime or Notepad++) and update the
-CONFIG variables. Keep the “js” folder in the same folder as the Generator.html file.
-5. Feed the Event Hub with the use of Generator.html (In order to start the Stream Generator,
-open the Generator.html with a web browser, e.g.: Chrome and press the “Send Data” button.)
+3. Generate a Security Access Signature (use a terminal with windows operationg system): https://github.com/sandrinodimattia/RedDog/releases
+4. Edit Generator.html (open with a text editor, e.g.: Sublime or Notepad++) and update the CONFIG variables. Keep the “js” folder in the same folder as the Generator.html file.
+5. Feed the Event Hub with the use of Generator.html (In order to start the Stream Generator, open the Generator.html with a web browser, e.g.: Chrome and press the “Send Data” button.)
 6. Setup a Storage account.
 7. Upload the Reference Data files to your storage account.
 8. Setup a Stream Analytics Job.
@@ -17,9 +14,7 @@ open the Generator.html with a web browser, e.g.: Chrome and press the “Send D
 
 **SCENARIO**
 
-You have access to a data stream that’s generated from ATMs. Each event contains data related to the
-transaction that took place. You are asked to create an Azure Analytics solution for the tasks listed in the
-“QUERIES” section.
+You have access to a data stream that’s generated from ATMs. Each event contains data related to the transaction that took place. You are asked to create an Azure Analytics solution for the tasks listed in the “QUERIES” section.
 
 **REFERENCE DATA**
 
