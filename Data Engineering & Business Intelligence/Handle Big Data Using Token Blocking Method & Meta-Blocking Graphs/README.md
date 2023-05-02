@@ -204,9 +204,7 @@ print('The number of total comparisons is:',int(total_number_of_comp))
     The number of total comparisons is: 2644696280
     
 
-**C.** 
-
-##### We will use the Meta-Blocking method to reduce the number of duplicates as well as the number of nonmeaningful comparisons and optimize the blocking procedure.
+**C.** We will use the Meta-Blocking method to reduce the number of duplicates as well as the number of nonmeaningful comparisons and optimize the blocking procedure.
 
 ##### Firstly, we will create a dictionary where the keys will be the concatenated ids of the entities we compare and the values will be the number of common blocks each pair of entities has.
 
@@ -313,9 +311,7 @@ print('The number of total comparisons is:',number_of_comp_after_prune)
     The number of total comparisons is: 1127
     
 
-**D.** 
-
-##### We assume that the dataset is tokenized per column and each column (attribute title) includes lists of the tokens per row. A fixed dataset with dummy variables will be used for reference. The scope of the function is to be fed the 2 entities ids as well as the dataset and then calculate their Jaccard similarity per attribute comparing the lists of tokens that correspond to them. 
+**D.** We assume that the dataset is tokenized per column and each column (attribute title) includes lists of the tokens per row. A fixed dataset with dummy variables will be used for reference. The scope of the function is to be fed the 2 entities ids as well as the dataset and then calculate their Jaccard similarity per attribute comparing the lists of tokens that correspond to them. 
 
 
 ```python
