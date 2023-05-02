@@ -1,12 +1,9 @@
 **INSTRUCTIONS**
 
-You are going to use REDIS and MongoDB to perform an analysis on data related
-to classified ads from the used motorcycles market.
+You are going to use MongoDB to perform an analysis on data related to classified ads from the used motorcycles market.
 
-1. Install REDIS and MongoDB on your workstations. Version 4 of REDIS for
-windows is available here: https://github.com/tporadowski/redis/releases If you have an older version, make sure that you upgrade since some of the commands needed for the assignment are not supported by older versions. The installation process is straightforward.
-2. Download the BIKES_DATASET.zip dataset from
-https://drive.google.com/open?id=1m4W6anTDphWRnHDwsh-hlexOGrAkMrSq
+1. Install MongoDB on your workstations.
+2. Download the BIKES_DATASET.zip dataset from https://drive.google.com/open?id=1m4W6anTDphWRnHDwsh-hlexOGrAkMrSq
 3. Do the tasks listed in the “TASKS” section:
 
 **SCENARIO**
@@ -15,7 +12,7 @@ You are a data analyst at a consulting firm and you have access to a dataset of 
 
 **TASKS**
 
-**2.1 Add your data to MongoDB.**
+**1.1 Add your data to MongoDB.**
 
 We use library mongolite in R to import the data in MongoDB. First we create a new collection called “mycol” and a new database called “mydb” as a localhost. Then, we create an indexing txt file which includes the paths of all the json files included in the dataset “bikes”. By iterating through the list, we transform json files to data frames and pass them through a cleaning function in order to clean them. In the cleaning procedure we check for blanks and NAs, we substitute words using regex and change the type of variables and finally create a new column “Negotiable” which shows when an ad is negotiable about its price or not. Finally, we retransform data frames to json files and import them to mongoDB.
 
@@ -94,7 +91,7 @@ for (i in 1:nrow(jsonfiles)){
 }
 ```
 
-**2.2 How many bikes are there for sale?**
+**1.2 How many bikes are there for sale?**
 
 By using function count we count 29701 bikes for sale.
 
@@ -104,7 +101,7 @@ By using function count we count 29701 bikes for sale.
 bikes_for_sale <- m$count()
 ```
 
-**2.3 What is the average price of a motorcycle (give a number)? What is the
+**1.3 What is the average price of a motorcycle (give a number)? What is the
 number of listings that were used in order to calculate this average
 (give a number as well)? Is the number of listings used the same as the
 answer in 2.2? Why?**
@@ -131,7 +128,7 @@ m$aggregate('[
             ]')
 ```
 
-**2.4 What is the maximum and minimum price of a motorcycle currently
+**1.4 What is the maximum and minimum price of a motorcycle currently
 available in the market?**
 
 The maximum logical price is 89000 and the minimum logical price is 210 (as we excluded prices equal or lower to 200). 
@@ -149,7 +146,7 @@ m$aggregate('[{"$match":{"ad_data.Price": {"$gt": 200}}},
             ]')
 ```
 
-**2.5 How many listings have a price that is identified as negotiable?**
+**1.5 How many listings have a price that is identified as negotiable?**
 
 By counting the TRUE values of column Negotiable, we count 1348 negotiable listings.
 
@@ -161,7 +158,7 @@ m$aggregate('[{"$match":{"ad_data.Negotiable": true}},
             ]')
 ```
 
-**2.6 What is the motorcycle brand with the highest average price?**
+**1.6 What is the motorcycle brand with the highest average price?**
 
 The brand with the highest average price is Semog with an average price of 15600.
 
@@ -178,7 +175,7 @@ highestAVGPrice <- m$aggregate(
 )
 ```
 
-**2.7 How many bikes have “ABS” as an extra?**
+**1.7 How many bikes have “ABS” as an extra?**
 
 The total number of bikes with ABS as an extra is 4008.
 
