@@ -2,6 +2,7 @@
 
 We are given a part of OpenFlights Airports network, which contains airports, airlines and flights between airports. In particular, the dataset contains 7698 Airports, 6161 Airlines, 6956 Cities, 237 Countries and 67.663 Flights between Airports. The dataset contains 3 csv files and a description for the attributes in each file. The scope of this analysis is to create a graph database using Neo4j tool with the above data and to identify the answers to questions related to the data.
 
+
 ### **Graph Schema**
 
 The structure of the graph is presented in plots 1,2,3,4. Specifically, in plot 1, the Airlines’ nodes could be observed that include the Airline’s name and ID as attributes. In plot 2, the Airports’ nodes are presented that include the Airport’s City, Country, IATA Code, Latitude, Longitude, Name, and ID as attributes. In plot 3, the Routes’ nodes are presented that include the Route’s Airline, Destination Airport, Plane Type and Source Airport as attributes. Finally, in plot 4, the relationships between the above nodes presented. In detail, each flight belongs to an Airline company, while each Route departs and arrives at an Airport.
@@ -20,7 +21,7 @@ Figure 4 Graph Schema
 
 ![image-4.png](Images/Picture4.png)
 
-**Import of Data and Creation of Database**
+### **Import of Data and Creation of Database**
 
 As mentioned in description, 3 csv files were used to create the database. We used the following cypher queries in Neo4j to import the Nodes and create the relationships between them:
 
@@ -109,6 +110,8 @@ MATCH (airport:Airport)
 WHERE r.DestinationAirport = airport.IATA
 
 MERGE (r)-[:ArrivesTo]->(airport)
+
+
 
 
 ### **Queries Results**
