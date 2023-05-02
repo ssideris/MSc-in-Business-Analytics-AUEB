@@ -113,9 +113,11 @@ Selection of Columns and Connection of Flat-file Source to SQL Server Destinatio
 Furthermore, we connected the “Import CSV” process, with an SQL Execute Task, that would truncate our “staging” table each time we execute the data flow.
 
 Connection of “Truncate Staging” to “Import CSV
+
 ![image-4.png](Images/Picture4.png)
 
 Truncate Query Execution
+
 ![image-5.png](Images/Picture5.png)
 
 
@@ -147,22 +149,26 @@ and the following will be used as measures:
 To implement that, we created a new table for each dimension. In the following image we demonstrate the construction of a dimension table with a primary key and a column called “label_make” to insert the values of column make. The same procedure was followed for all the other Dimensions.
 
 Creation of Table “make_dim”
+
 ![image-6.png](Images/Picture6.png)
 
 Afterwards, in Visual Studio, we created an Execute SQL Task for each dimension which contains the SQL Query that inserts values into our dimension tables and connected each one of them with the “Import CSV”.
 
 SQL Insert Query for Table “make_dim”
+
 ![image-7.png](Images/Picture7.png)
 
 Finally, we created the fact table called “used_cars_fact” which contains as foreign keys the primary keys of each dimension and the 4 measures we described before. 
 
 Fact Table Design and SQL Insert Query
+
 ![image-8.png](Images/Picture8.png)
 ![image-9.png](Images/Picture9.png)
 
 Afterwards, in Visual Studio, we created an Execute SQL Task for fact table which contains the SQL Query that inserts values into our fact table and connects it with each one dimension’s SQL Execute Task. The final running structure of our control flow in Visual Studio is the following:
 
 Connection of “Update used_cars_fact” to the other Execute SQL Tasks
+
 ![image-10.png](Images/Picture10.png)
 
 After executing the control flow, we can observe that every table is filled with values. By running a select statement in MSSQL we can assure that. We demonstrate the results of one dimension and of the fact table.
@@ -172,6 +178,7 @@ After executing the control flow, we can observe that every table is filled with
 Finally, we deployed an SSIS Package which is responsible to execute the Visual from the SQL Server daily at 2 am.
 
 Job Activity Monitor Creation
+
 ![image-14.png](Images/Picture14.png)
 
 ##Data Cube Deployment
@@ -180,6 +187,7 @@ We created a Multidimensional Analysis Services project in SSIS and connected it
 cube Schema is the following:
 
 Cube Visualization
+
 ![image-15.png](Images/Picture15.png)
 
 We matched dimensions and measures of our database to the Cube and calculated some extra measures (the averages of our already existing measures) to use them later in our visualizations.
@@ -193,11 +201,13 @@ We matched dimensions and measures of our database to the Cube and calculated so
 We connected the Cube to our Visual flow via an Analysis Services Processing Task.
 
 Connection of ASPT to “Update used_cars_fact”
+
 ![image-21.png](Images/Picture21.png)
 
 Finally, we connected our Cube to Power BI to visualize our data. The star schema of our database is the following:
 
 Star Schema
+
 ![image-22.png](Images/Picture22.png)
 
 ## Business Analysis
@@ -207,6 +217,7 @@ Star Schema
 Using Power BI, we created a visualization about the car auctions market and presented the most important features of it for the first 7 months of 2015. On the top, we created a stacked column chart which presented the Total and Top 5 Sales by Maker. The Total Sales reached 494.90k and the Top 5 Makers by Sales are Ford (76k), Chevrolet(50k), Nissan(40k), Toyota(32k) and Dodge(25k). The Top 5 constitutes 45% of the market’s Total Sales and are mostly USA and Japan produced cars which indicates that US citizens prefer the domestic car makers market but also, the well-established names of Japanese cars’ brands. Also, this indicates that it is easier for Auto+ to be supplied cars created by the Top 5 makers as there is greater supply and competitive prices for them in the US used cars market. Moreover, it is observed that, from the Total of Sales, the vast majority consists of automatic cars (437.25k) against manual cars (15.07k) which indicates the preference of US citizens to automatic cars. Finally, the most preferred colors in descending order are black, white, silver, gray, blue and red.
 
 Market Analysis Report
+
 ![image.png](Images/Picture23.png)
 
 Furthermore, we studied the sales market by 3 competitive factors: 
@@ -259,7 +270,9 @@ To decide about the best location to open the store, we created a report based o
 ![image-5.png](Images/Picture27.png)
 
  **CALIFORNIA**
+ 
 ![image-6.png](Images/Picture28.png)
 
  **FLORIDA**
+ 
 ![image-7.png](Images/Picture29.png)
