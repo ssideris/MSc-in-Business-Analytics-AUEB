@@ -17,6 +17,7 @@ Figure 3 Route Nodes
 ![image-3.png](Images/Picture3.png)
 
 Figure 4 Graph Schema
+
 ![image-4.png](Images/Picture4.png)
 
 **Import of Data and Creation of Database**
