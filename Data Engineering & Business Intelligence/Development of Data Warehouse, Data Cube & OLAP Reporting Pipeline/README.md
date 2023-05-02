@@ -268,6 +268,6 @@ To decide about the best location to open the store, we created a report based o
 
 ![image-5.png](Images/Picture27.png)
 
- **CALIFORNIA**                                                         **FLORIDA**
+ **CALIFORNIA VS FLORIDA**
  
 ![image-6.png](Images/Picture28.png)   ![image-7.png](Images/Picture29.png)
