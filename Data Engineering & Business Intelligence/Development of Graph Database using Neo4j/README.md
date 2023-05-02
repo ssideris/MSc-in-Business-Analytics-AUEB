@@ -8,16 +8,16 @@ The structure of the graph is presented in plots 1,2,3,4. Specifically, in plot 
 
 
 Figure 1 Airline Nodes
-![image.png](attachment:image.png)
+![image.png](Picture1.png)
 
 Figure 2 Airport Nodes
-![image-2.png](attachment:image-2.png)
+![image-2.png](Picture2.png)
 
 Figure 3 Route Nodes
-![image-3.png](attachment:image-3.png)
+![image-3.png](Picture3.png)
 
 Figure 4 Graph Schema
-![image-4.png](attachment:image-4.png)
+![image-4.png](Picture4.png)
 
 **Import of Data and Creation of Database**
 
@@ -132,7 +132,7 @@ ORDER BY `Total Flights` DESC
 
 LIMIT 5;
 
-![image.png](attachment:image.png)
+![image.png](Picture5.png)
 
 **Query 2: Which are the top 5 countries with the most airports. Return country name and number of airports.**
     
@@ -144,7 +144,7 @@ ORDER BY count DESC
 
 LIMIT 5;
 
-![image.png](attachment:image.png)
+![image.png](Picture6.png)
 
 **Query 3: Which are the top 5 airlines with international flights from/to ‘Greece’. Return airline name and number of flights.**
 
@@ -164,7 +164,7 @@ ORDER BY `Total Flights From/To Greece` DESC
 
 LIMIT 5;
 
-![image.png](attachment:image.png)
+![image.png](Picture7.png)
 
 **Query 4: Which are the top 5 airlines with local flights inside ‘Germany’. Return airline name and number of flights.**
 
@@ -182,7 +182,7 @@ ORDER BY `Local Flights in Germany` DESC
 
 LIMIT 5;
 
-![image.png](attachment:image.png)
+![image.png](Picture8.png)
 
 **Query 5: Which are the top 10 countries with flights to Greece. Return country name and number of flights.**
 
@@ -200,8 +200,8 @@ ORDER BY `Flights to Greece` DESC
 
 LIMIT 10;
 
-![image.png](attachment:image.png)
-![image-2.png](attachment:image-2.png)
+![image.png](Picture9.png)
+![image-2.png](Picture10.png)
 
 **Query 6: Find the percentage of air traffic (inbound and outbound) for every city in Greece. Return city name and the corresponding traffic percentage in descending order.**
 
@@ -243,7 +243,7 @@ RETURN City, ROUND((SUM(`Flights Proportion`)*1.0/`Total Flights`)*100,2) AS `Fl
 
 ORDER BY `Flights Percentage` DESC;
 
-![image.png](attachment:image.png)
+![image.png](Picture11.png)
 
 **Query 7: Find the number of international flights to Greece with plane types ‘738’ and ‘320’. Return for each plane type the number of flights.**
 
@@ -257,7 +257,7 @@ AND (rin.PlaneType='738'OR rin.PlaneType='320' ))
 
 RETURN rin.PlaneType AS `Plane Type`, COUNT(*) AS `International Flights to Greece`
 
-![image.png](attachment:image.png)
+![image.png](Picture12.png)
 
 **Query 8: Which are the top 5 flights that cover the biggest distance between two airports (use function point({ longitude: s1.longitude, latitude: s1.latitude }) and function distance(point1, point2)). Return From (airport), To (airport) and distance in km.**
 
@@ -274,7 +274,7 @@ ORDER BY `Distance in km`  DESC
 LIMIT 5;
 
 
-![image.png](attachment:image.png)
+![image.png](Picture13.png)
 
 **Query 9: Find 5 cities that are not connected with direct flights to ‘Berlin’. Score the cities in descending order with the total number of flights to other destinations. Return city name and score.**
 
@@ -303,7 +303,7 @@ ORDER BY `Number of Routes` DESC
 LIMIT 5;
 
 
-![image.png](attachment:image.png)
+![image.png](Picture14.png)
 
 **Query 10: Find all shortest paths from ‘Athens’ to ‘Sydney’. Use only relations between flights and city airports.**
 
@@ -316,6 +316,6 @@ MATCH p = allShortestPaths((airout)-[:DepartsFrom|ArrivesTo*]-(airin))
 RETURN DISTINCT [n in nodes(p) | n.City] AS `All Shortest Paths`, length(p) as `Path Length`
 
 
-![image.png](attachment:image.png)
+![image.png](Picture15.png)
 
 In the results of 10th query, null values could be observed in the sequencies of the shortest paths. This occurs due to the fact that the Airport Nodes are connected through Route Nodes and given that Route Nodes do not include a City attribute, this leads to the null values being introduced.
