@@ -1,6 +1,6 @@
 **INSTRUCTIONS**
 
-You are going to use REDIS and MongoDB to perform an analysis on data related to classified ads from the used motorcycles market.
+You are going to use REDIS to perform an analysis on data related to classified ads from the used motorcycles market.
 
 1. Install REDIS n your workstations. Version 4 of REDIS for windows is available here:
 https://github.com/tporadowski/redis/releases If you have an older version, make sure that you upgrade since some of the commands needed for the assignment are not supported by older versions. The installation process is straightforward.
