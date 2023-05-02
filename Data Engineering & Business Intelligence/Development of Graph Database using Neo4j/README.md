@@ -114,6 +114,15 @@ MERGE (r)-[:ArrivesTo]->(airport)
 
 
 
+
+
+
+
+
+
+
+
+
 ### **Queries Results**
 
 **Query 1: Which are the top 5 airports with the most flights. Return airport name and number of flights.**
