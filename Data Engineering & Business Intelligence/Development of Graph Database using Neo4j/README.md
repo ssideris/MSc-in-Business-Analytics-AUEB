@@ -299,7 +299,7 @@ WHERE (airin.City='BERLIN')
 
 WITH airin.City AS `Stop`,
 
-    COLLECT(airout.City) AS `FromAir`
+COLLECT(airout.City) AS `FromAir`
     
 MATCH (r)-[:DepartsFrom]->(airpout:Airport)
 
