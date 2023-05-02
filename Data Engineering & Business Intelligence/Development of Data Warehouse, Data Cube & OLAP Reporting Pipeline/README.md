@@ -2,8 +2,7 @@
 
 You are going to use SQL Server Database, SQL Server Analysis Services and Power BI or Tableau for this project.
 You are going to design and develop a data warehouse, build one or more data cubes on top of it, develop some
-OLAP reports and visualize your results. You are going to present your project in Teams (10’-15’ each group). This
-should be in the form of a business case. This includes:
+OLAP reports and visualize your results.  This includes:
 
 - business goals, description of the problem/domain
 
