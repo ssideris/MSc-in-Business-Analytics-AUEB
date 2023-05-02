@@ -135,9 +135,6 @@ data1
 
 **A.** We create an empty dictionary where each token will take place as a key in it. We search for each token in the column tokens per row and append to the dictionary the ids of the rows we find to include each token in. Each key must include at least 2 values to exist. Finally, we delete keys equal to nan, none and blanks as they are nonmeaningful and pretty print the key-value pairs.
 
-###### Each token will take place as a key in our dictionary. We search for each token in the column tokens per row and append to the dictionary the ids of the rows we find to include each token in. Each key must include at least 2 values to exist.
-
-
 ```python
 #initialize the dictionary
 kv_pairs = {}
@@ -187,9 +184,6 @@ for key,values in kv_pairs.items():
 
 **B.** As a token might be included more than one times per row, it is possible that duplicate entities have been appended to some keys. The duplicates increase the number of comparisons per block. To count all the possible combinations, we firstly calculate all the possible combinations of the entities inside the same block and then sum all the combinations per block to get the total number of combinations. 
 
-###### As a token might be included more than one times per row, it is possible that duplicate entities have been appended to some keys. The duplicates increase the number of comparisons per block.
-
-
 ```python
 #empty list that will hold the number of comparisons per block
 number_of_comp_per_token = []
@@ -210,25 +204,20 @@ print('The number of total comparisons is:',int(total_number_of_comp))
     The number of total comparisons is: 2644696280
     
 
-**C.** We will use the Meta-Blocking method to reduce the number of duplicates as well as the number of nonmeaningful comparisons and optimize the blocking procedure. 
-Firstly, we will create a dictionary where the keys will be the concatenated ids of the entities we compare and the values will be the number of common blocks each pair of entities has.¶Then, we will iterate through each block, choose the first entity in it and create all the concatinated pairs of it with the rest of the entities in the block. As we want the graph to be undirected, for pairs created inside the same block and after all the possible pairs for the entity inside the block have been created, we delete the entity from the block and continue with the next entity (which now takes the 1st position in the block) to avoid creating reversed pairs. For pairs which we want to make sure that do not exist already in the dictionary as keys (in normal or reverse form), we will also create the reverse pair of each comparison and check if the reverse key is already included in the already existing keys of the dictionary to avoid creating it again if it exists in reverse. As the number of possible pairs is extremely high, we will use the first 100 entities and their possible pairs as a toy example. We will then count the number of 1s for each key which will show us the weight of each pair. Finally, we will prune the pairs that have weight less than 2.
-We recalculate the number of comparisons as in task B. To do so, we will sum the weights of all pairs. As we used only 100 entities to create the dictionary, we are not able to calculate the exact number of combinations, but the methodology remains the same.
+**C.** 
 
 ##### We will use the Meta-Blocking method to reduce the number of duplicates as well as the number of nonmeaningful comparisons and optimize the blocking procedure.
 
 ##### Firstly, we will create a dictionary where the keys will be the concatenated ids of the entities we compare and the values will be the number of common blocks each pair of entities has.
-
-
 
 ```python
 #create empty dictionary to store the entities - weights pairs
 entities_weights_pairs = {}
 ```
 
-###### To do so, we will iterate through each block, choose the first entity in it and create all the concatinated pairs of it with the rest of the entities in the block. As we want the graph to be undirected, for pairs created inside the same block and after all the possible pairs for the entity inside the block have been created, we delete the entity from the block and continue with the next entity (which now takes the 1st position in the block) to avoid creating reversed pairs. For pairs which we want to make sure that do not exist already in the dictionary as keys (in normal or reverse form), we will also create the reverse pair of each comparison and check if the reverse key is already included in the already existing keys of the dictionary to avoid creating it again if it exists in reverse.
+##### To do so, we will iterate through each block, choose the first entity in it and create all the concatinated pairs of it with the rest of the entities in the block. As we want the graph to be undirected, for pairs created inside the same block and after all the possible pairs for the entity inside the block have been created, we delete the entity from the block and continue with the next entity (which now takes the 1st position in the block) to avoid creating reversed pairs. For pairs which we want to make sure that do not exist already in the dictionary as keys (in normal or reverse form), we will also create the reverse pair of each comparison and check if the reverse key is already included in the already existing keys of the dictionary to avoid creating it again if it exists in reverse.
 
-###### As the number of possible pairs is extremely high, we will use the first 100 entities and their possible pairs as a toy example.
-
+##### As the number of possible pairs is extremely high, we will use the first 100 entities and their possible pairs as a toy example.
 
 ```python
 total_entities = 0
@@ -269,7 +258,7 @@ for block in kv_pairs.values():
             break
 ```
 
-###### We will then count the number of 1s for each key which will show us the weight of each pair.
+##### We will then count the number of 1s for each key which will show us the weight of each pair.
 
 
 ```python
@@ -278,7 +267,7 @@ for key,values in entities_weights_pairs.items():
     entities_weights_pairs[key] = sum(values) 
 ```
 
-###### Finally, we will prune the pairs that have weight less than 2.
+##### Finally, we will prune the pairs that have weight less than 2.
 
 
 ```python
@@ -309,7 +298,7 @@ for key,values in entities_weights_pairs_final.items():
     
     
 
-###### We recalculate the number of comparisons as in task B. To do so, we will sum the weights of all pairs. As we used only 100 entities to create the dictionary we are not able to calculate the exact number of combinations but the methodology remains the same.
+##### We recalculate the number of comparisons as in task B. To do so, we will sum the weights of all pairs. As we used only 100 entities to create the dictionary we are not able to calculate the exact number of combinations but the methodology remains the same.
 
 
 ```python
@@ -324,11 +313,9 @@ print('The number of total comparisons is:',number_of_comp_after_prune)
     The number of total comparisons is: 1127
     
 
-**D.** We assume that the dataset is tokenized per column and each column (attribute title) includes lists of the tokens per row. A fixed dataset with dummy variables will be used for reference. The scope of the function is to be fed the 2 entities ids as well as the dataset and then calculate their Jaccard similarity per attribute comparing the lists of tokens that correspond to them.¶
-The function iterates each column and for the rows that match the ids given, the lists of tokens are appended to a new list. From this list we take the intersection and union of the lists of tokens it includes and finally calculate the Jaccard similarity per attribute by dividing intersection with union. 
+**D.** 
 
-###### We assume that the dataset is tokenized per column and each column (attribute title) includes lists of the tokens per row. A fixed dataset with dummy variables will be used for reference. The scope of the function is to be fed the 2 entities ids as well as the dataset and then calculate their Jaccard similarity per attribute comparing the lists of tokens that correspond to them. 
-
+##### We assume that the dataset is tokenized per column and each column (attribute title) includes lists of the tokens per row. A fixed dataset with dummy variables will be used for reference. The scope of the function is to be fed the 2 entities ids as well as the dataset and then calculate their Jaccard similarity per attribute comparing the lists of tokens that correspond to them. 
 
 
 ```python
