@@ -101,22 +101,22 @@ We connected SQL Server Destination to the Flat-file Source in order to connect 
 
 Creation of Table “staging” and Data Type per Column Declaration
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture1.png)
 
 Finally, we chose the columns we will use in our report, connected the Flat-file Source to the SQL Server Destination and imported the CSV file to the “staging” table.
 
 Selection of Columns and Connection of Flat-file Source to SQL Server Destination
 
-![image-2.png](attachment:image-2.png)
-![image-3.png](attachment:image-3.png)
+![image-2.png](Images/Picture2.png)
+![image-3.png](Images/Picture3.png)
 
 Furthermore, we connected the “Import CSV” process, with an SQL Execute Task, that would truncate our “staging” table each time we execute the data flow.
 
 Connection of “Truncate Staging” to “Import CSV
-![image-4.png](attachment:image-4.png)
+![image-4.png](Images/Picture4.png)
 
 Truncate Query Execution
-![image-5.png](attachment:image-5.png)
+![image-5.png](Images/Picture5.png)
 
 
 Afterwards, we defined the dimensions and measures for the fact table. After consideration, we decided that the following columns will be used as dimensions:
@@ -147,32 +147,32 @@ and the following will be used as measures:
 To implement that, we created a new table for each dimension. In the following image we demonstrate the construction of a dimension table with a primary key and a column called “label_make” to insert the values of column make. The same procedure was followed for all the other Dimensions.
 
 Creation of Table “make_dim”
-![image-6.png](attachment:image-6.png)
+![image-6.png](Images/Picture6.png)
 
 Afterwards, in Visual Studio, we created an Execute SQL Task for each dimension which contains the SQL Query that inserts values into our dimension tables and connected each one of them with the “Import CSV”.
 
 SQL Insert Query for Table “make_dim”
-![image-7.png](attachment:image-7.png)
+![image-7.png](Images/Picture7.png)
 
 Finally, we created the fact table called “used_cars_fact” which contains as foreign keys the primary keys of each dimension and the 4 measures we described before. 
 
 Fact Table Design and SQL Insert Query
-![image-8.png](attachment:image-8.png)
-![image-9.png](attachment:image-9.png)
+![image-8.png](Images/Picture8.png)
+![image-9.png](Images/Picture9.png)
 
 Afterwards, in Visual Studio, we created an Execute SQL Task for fact table which contains the SQL Query that inserts values into our fact table and connects it with each one dimension’s SQL Execute Task. The final running structure of our control flow in Visual Studio is the following:
 
 Connection of “Update used_cars_fact” to the other Execute SQL Tasks
-![image-10.png](attachment:image-10.png)
+![image-10.png](Images/Picture10.png)
 
 After executing the control flow, we can observe that every table is filled with values. By running a select statement in MSSQL we can assure that. We demonstrate the results of one dimension and of the fact table.
 
-![image-11.png](attachment:image-11.png)  ![image-12.png](attachment:image-12.png)  ![image-13.png](attachment:image-13.png)
+![image-11.png](Images/Picture11.png)  ![image-12.png](Images/Picture12.png)  ![image-13.png](Images/Picture13.png)
 
 Finally, we deployed an SSIS Package which is responsible to execute the Visual from the SQL Server daily at 2 am.
 
 Job Activity Monitor Creation
-![image-14.png](attachment:image-14.png)
+![image-14.png](Images/Picture14.png)
 
 ##Data Cube Deployment
 
@@ -180,25 +180,25 @@ We created a Multidimensional Analysis Services project in SSIS and connected it
 cube Schema is the following:
 
 Cube Visualization
-![image-15.png](attachment:image-15.png)
+![image-15.png](Images/Picture15.png)
 
 We matched dimensions and measures of our database to the Cube and calculated some extra measures (the averages of our already existing measures) to use them later in our visualizations.
 
-![image-16.png](attachment:image-16.png)
-![image-17.png](attachment:image-17.png)
-![image-18.png](attachment:image-18.png)
-![image-19.png](attachment:image-19.png)
-![image-20.png](attachment:image-20.png)
+![image-16.png](Images/Picture16.png)
+![image-17.png](Images/Picture17.png)
+![image-18.png](Images/Picture18.png)
+![image-19.png](Images/Picture19.png)
+![image-20.png](Images/Picture20.png)
 
 We connected the Cube to our Visual flow via an Analysis Services Processing Task.
 
 Connection of ASPT to “Update used_cars_fact”
-![image-21.png](attachment:image-21.png)
+![image-21.png](Images/Picture21.png)
 
 Finally, we connected our Cube to Power BI to visualize our data. The star schema of our database is the following:
 
 Star Schema
-![image-22.png](attachment:image-22.png)
+![image-22.png](Images/Picture22.png)
 
 ## Business Analysis
 
@@ -207,7 +207,7 @@ Star Schema
 Using Power BI, we created a visualization about the car auctions market and presented the most important features of it for the first 7 months of 2015. On the top, we created a stacked column chart which presented the Total and Top 5 Sales by Maker. The Total Sales reached 494.90k and the Top 5 Makers by Sales are Ford (76k), Chevrolet(50k), Nissan(40k), Toyota(32k) and Dodge(25k). The Top 5 constitutes 45% of the market’s Total Sales and are mostly USA and Japan produced cars which indicates that US citizens prefer the domestic car makers market but also, the well-established names of Japanese cars’ brands. Also, this indicates that it is easier for Auto+ to be supplied cars created by the Top 5 makers as there is greater supply and competitive prices for them in the US used cars market. Moreover, it is observed that, from the Total of Sales, the vast majority consists of automatic cars (437.25k) against manual cars (15.07k) which indicates the preference of US citizens to automatic cars. Finally, the most preferred colors in descending order are black, white, silver, gray, blue and red.
 
 Market Analysis Report
-![image.png](attachment:image.png)
+![image.png](Images/Picture23.png)
 
 Furthermore, we studied the sales market by 3 competitive factors: 
 
@@ -230,7 +230,7 @@ In conclusion, Customers, on average, prefer cars that balance between mileage a
 
 To get a more detailed view on the top 5 Makers’ cars, we created a tool that allows the user to compare models and trims from the Top 5 Makers. Users can choose their makers on the top of the page, models and trims on the lists left and right of the page and color on the bottom of the page. Additionally, they can observe the distribution of prices per maker, model and trim from the bar charts on the left and right bottom of the page. In this way, users can easily identify key differences on the selling price, mileage and condition and get supplied makers, models and trims that are closer to their customer preferences. Additionally, the user is able to visualize their car’s color choosing from a list of top 6 more applied colors. We used this tool in order to choose the best models from each maker and consult our customer on the best fit models they need to be supplied for their entry into the market.
 
-![image-2.png](attachment:image-2.png)
+![image-2.png](Images/Picture24.png)
 
 Similarly to Step 1, we observed the models of higher selling amount per maker and compared them to the average selling price, average odometer and average condition of the market. It is observed that:
 
@@ -246,8 +246,8 @@ Similarly to Step 1, we observed the models of higher selling amount per maker a
 
 We created a scorecard to evaluate the Top Models:
 
-![image-3.png](attachment:image-3.png)
-![image-4.png](attachment:image-4.png)
+![image-3.png](Images/Picture25.png)
+![image-4.png](Images/Picture26.png)
 
 In conclusion, it is suggested that Auto+ could get supplied of models Chevrolet Malibu, Dodge Grand Caravan, Ford Fusion, Nissan Altima, Nissan Maxima, Toyota Camry and Toyota Corolla as they perform the highest on our scoreboard and it is believed that  Ford Fusion, Nissan Altima and Toyota Camry will outperform the other models on level of Sales as the higher and most balanced performers in terms of average selling price, average odometer and average condition of our scorecard.
 
@@ -256,10 +256,10 @@ In conclusion, it is suggested that Auto+ could get supplied of models Chevrolet
 To decide about the best location to open the store, we created a report based on the Total Sales per State. It is observed that California State is the best choice for our client. While Florida is observed to be the highest on Total Sales among other states (74.65k), California State presents a high number of Total Sales (61.03k) and lower performance on our key factors in comparison to the car models we advised our customer to supply. More in detail, California’s average selling price is 14.84k in comparison to our stock’s selling price of 11.24k, California’s average odometer is 67.24 in comparison to our stock’s odometer of 60.16k and California’s average condition is 3.09 in comparison to our stock’s condition of 3.04. Moreover, the average MMR of California is +0.00261 which indicates a small profit on each car sale based on California’s average selling price. The low average selling price of our client’s stock is giving them the opportunity to sell on higher price and on a margin of +3.6k until California's market average selling price is reached.
 
 
-![image-5.png](attachment:image-5.png)
+![image-5.png](Images/Picture27.png)
 
  **CALIFORNIA**
-![image-6.png](attachment:image-6.png)
+![image-6.png](Images/Picture28.png)
 
  **FLORIDA**
-![image-7.png](attachment:image-7.png)
+![image-7.png](Images/Picture29.png)
