@@ -2,19 +2,17 @@
 
 You are going to use REDIS and MongoDB to perform an analysis on data related to classified ads from the used motorcycles market.
 
-1. Install REDIS and MongoDB on your workstations. Version 4 of REDIS for windows is available here:
+1. Install REDIS n your workstations. Version 4 of REDIS for windows is available here:
 https://github.com/tporadowski/redis/releases If you have an older version, make sure that you upgrade since some of the commands needed for the assignment are not supported by older versions. The installation process is straightforward.
-2. Download the BIKES_DATASET.zip dataset from
-https://drive.google.com/open?id=1m4W6anTDphWRnHDwsh-hlexOGrAkMrSq
-3. Download the RECORDED_ACTIONS.zip dataset from
+2 Download the RECORDED_ACTIONS.zip dataset from
 https://drive.google.com/open?id=1wyL8nQKDEu6rdr9BH6CgBwGnPnvRT8cJ
-4. Do the tasks listed in the “TASKS” section:
+3 Do the tasks listed in the “TASKS” section:
 
 **SCENARIO**
 
 You are a data analyst at a consulting firm and you have access to a dataset of ~30K classified ads from the used motorcycles market. You also have access to some seller related actions that have been tracked in the previous months. You are asked to create a number of programs/queries for the tasks listed in the “TASKS” section.
 
-**TASK 1**
+**TASK**
 
 In this task you are going to use the “recorded actions” dataset in order to generate some analytics with REDIS. At the end of each month, the classifieds provider sends a personalized email to some of the sellers with a number of suggestions on how they could improve their listings. Some e-mails may have been sent two or three times in the same month due to a technical issue. Not all users open these e-mails. However, we keep track of the e-mails that have been read by their recipients. Apart from that you are also given access to a dataset containing all the user ids along with a flag on whether they performed at least one modification on their listing for each month.
 
