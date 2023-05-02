@@ -12,6 +12,8 @@ You are a data analyst at a consulting firm and you have access to a dataset of 
 
 **TASKS**
 
+R is used.
+
 **1.1 Add your data to MongoDB.**
 
 We use library mongolite in R to import the data in MongoDB. First we create a new collection called “mycol” and a new database called “mydb” as a localhost. Then, we create an indexing txt file which includes the paths of all the json files included in the dataset “bikes”. By iterating through the list, we transform json files to data frames and pass them through a cleaning function in order to clean them. In the cleaning procedure we check for blanks and NAs, we substitute words using regex and change the type of variables and finally create a new column “Negotiable” which shows when an ad is negotiable about its price or not. Finally, we retransform data frames to json files and import them to mongoDB.
