@@ -1,11 +1,11 @@
 ### Table of Contents
 
-1. [Introduction](###introduction)
+1. [Introduction](#introduction)
 2. [Descriptive Analysis and Exploratory Data Analysis](#id-2)
 3. [Pairwise Comparisons](#id-3)
 4. [Predictive or Descriptive Models](#id-4)
 5. [Further Analysis](#id-5)
-6. [Conclusions and Discussion](###conclusions-and-discussion)
+6. [Conclusions and Discussion](#conclusions-and-discussion)
 7. [Appendix](#id-7)
 
 ### 1. Introduction
