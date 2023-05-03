@@ -14,7 +14,7 @@ Therefore, for our analysis we calculate the metrics mentioned above (Support, C
 
 **2.** In figure 1 the number of book units sold by book title is presented. It can be observed that the book ‘Data Science and Business Analytics’ is the one with the highest number of units sold. While the book ‘Managerial Analytics’ seems to have the lowest number of units sold.
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture1.png)
 
 
 **3.** The store seeks to find the two books that should be advertised to customers who bought or are searching to buy four particular books (Managerial Analytics, Implementing Analytics, Customer Analytics for Dummies and Enterprise Analytics). To identify the books that should be advertised, we sorted the lift column in descending order. Then, for each of the four books that are of interest, we filtered the Market Basket Analysis table for association rules that contained on the left side only the book that was of interest. Therefore, we identified the books that the store should advertise in each distinct case. For the ‘Managerial Analytics’ book, the two books that should be advertised due to the highest lift, are the ‘Implementing Analytics’ and ‘Web Analytics 2.0’. For the ‘Implementing Analytics’ book, the two books that should be advertised due to the highest lift, are the ‘Data Science and Big Data Analytics’ and ‘Managerial Analytics’. For the ‘Customer Analytics for Dummies’ book, the two books that should be advertised due to the highest lift, are the ‘Decision Analytics’ and ‘Enterprise Analytics’. Finally, for the ‘Enterprise Analytics’ book, the two books that should be advertised due to the highest lift, are the ‘Customer Analytics for Dummies’ and ‘Managerial Analytics’. The association rule with the highest lift with three (3) items where each of the above-mentioned book is on the left side, is the rule where on the left side is the ‘Managerial Analytics’ book and on the right side are the ‘Implementing Analytics’ and ‘Web Analytics 2.0’ books. This means that if a customer has bought the ‘Managerial Analytics’ book, then it is 11.472 times more probable to buy the ‘Implementing Analytics’ and ‘Web Analytics 2.0’ books, compared to a random customer that has not bought the ‘Managerial Analytics’ book. 
@@ -43,9 +43,9 @@ The second cluster was named ‘First Timers’ and has 257 customers correspond
 The third cluster was named ‘Churners’ and has 300 customers corresponding to 30.6% of the total customer base. The average representative customer of the third cluster has not purchased a product for the last 13.8 months, has purchased on average 5.53 times from the store and has an average total of purchases of 552.87€. This means that the total purchases from customers of the third cluster are equal to 165,861€ which represents 36.7% of the total amount spend for purchases in the store during the study period.  Compared to the average customer from the whole customer base, it can be said that the representative customer from the third cluster, has not purchased a product for a longer period of time compared to the average customer from the whole customer base. Additionally, it can be said the representative customer from the third cluster, purchases products more frequently compared to the average customer from the whole customer base. Finally, it can be said that the representative customer from the third cluster, spends more money for the purchases of products compared to the average customer from the whole customer base.
 The fourth cluster was named ‘Best’ and has 217 customers corresponding to 22.2% of the total customer base. The average representative customer of the fourth cluster has not purchased a product for the last 4.2 months, has purchased on average 7.2 times from the store and has an average total of purchases of 715.13€. This means that the total purchases from customers of the fourth cluster are equal to 155,185€ which represents 34.3% of the total amount spend for purchases in the store during the study period.  Compared to the average customer from the whole customer base, it can be said that the representative customer from the fourth cluster, has purchased a product more recently compared to the average customer from the whole customer base. Additionally, it can be said the representative customer from the fourth cluster, purchases products more frequently compared to the average customer from the whole customer base. Finally, it can be said that the representative customer from the fourth cluster, spends more money for the purchases of products compared to the average customer from the whole customer base.
 
-![image-3.png](attachment:image-3.png)
+![image-3.png](Images/Picture2.png)
 
-![image-4.png](attachment:image-4.png)
+![image-4.png](Images/Picture3.png)
 
 Considering the results from the RFM analysis some strategies can be proposed to be enacted in each customer segment in order to achieve the desired results. For the cluster of the ‘Lost Customers’, the proposed strategy to be followed, is to firstly contact the customers for feedback to try to understand the reasons that caused them to lessen the engagement with the company, and then to give them incentives to reengage with the company. For the cluster of the ‘First Timers’, the proposed strategy revolves around offering enticing deals and promotions so as to keep the new customers as active as possible. For the cluster of the ‘Churners’, the proposed strategy aims to use a reactivation program for those customers, in order to avoid losing them through personalized emails and other targeted adds that will recommend products based on their past purchases with beneficial new offers that will be on sale. For the cluster of the ‘Best’, the proposed strategy aims to keep the best customer customers of the store as satisfied as possible by offering them loyalty programs that will reward them for their continued engagement with the company.
 
@@ -59,7 +59,7 @@ The marketing department of the insurance organization – XYZ, is organizing a 
 
 **3.** To calculate the minimum probability that a customer should have as to be considered a buyer and hence for solicitation, the expected profit if the company solicits the customer and the expected profit if the company ignores the customer needs to be calculated. Then by solving the system of the two and finding the probability that a customer will respond (p1), the cut-off point for solicitation can be calculated. The calculations are presented below.
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture4.png)
 
 As a result, the minimum probability that a customer should have to respond positively to the solicitation is 0.272 or 27.2%.
 
@@ -67,43 +67,43 @@ As a result, the minimum probability that a customer should have to respond posi
 
 **5.** In Table 2 it is presented the number of missing values in each variable in the dataset. As it can be seen, there are no such values in the available dataset.
 
-![image-2.png](attachment:image-2.png)
+![image-2.png](Images/Picture5.png)
 
 Additionally, the proportion of buyers and non-buyers is presented in figure 4, where it can be observed that the buyers account for 30% of the total customers in the database (9,039 customers). While the non-buyers account for the 70% of the total customers in the database (21,089 customers).
 
-![image-3.png](attachment:image-3.png)
+![image-3.png](Images/Picture6.png)
 
 **6.** If the proportions of the dataset were 10% buyers and 90% non-buyers, this would mean that the dataset would be imbalanced. Imbalanced datasets tend to pose a challenge for predictive modeling as most of the machine learning algorithms used for classification were designed around the assumption of an equal number of examples for each class. This results in models that have poor predictive performance, specifically for the minority class. Therefore, it would be necessary to perform a rebalancing of the proportions of each category (buyers – non-buyers), by selecting all the observations with the minority class (buyers) and selecting a subset of the majority class (non-buyers) to end up with a dataset which would contain 30% of buyers and 70% of non-buyers.
 
 **7.** In figure 5 the proportions of buyers and non-buyers for those customers that have purchased 5 or more times credit cards are presented. It was observed that no customer has purchased a credit card more than 5 times, therefore, the graph includes customers that have purchased a credit card 5 times. Additionally, it is observed that only two customers have purchased credit cards 5 times and both of those customers purchased the promoted insurance product.
 
-![image-4.png](attachment:image-4.png)
+![image-4.png](Images/Picture7.png)
 
 **8.** In figure 6 the average deposit amount for buyers and non-buyers is presented. It can be observed that the customers that purchased the promoted product (buyers), have on average a higher deposited amount in their accounts compared to customers that did not purchase the promoted product (non-buyers). It is important to note that the difference between the two categories of customers is not insignificant and seems to reveal a pattern concerning the target variable. The customers with higher deposited amounts in their account are more likely to purchase the promoted product compared to customers with lower deposited amounts in their account.
 
-![image-5.png](attachment:image-5.png)
+![image-5.png](Images/Picture8.png)
 
 **9.** A Decision Tree node was constructed and connected to the data source node. The variable that was used for the first split is Saving Balance. The reason for the selection of the variable saving balance, is because it had the split with the highest quality, with the quality of the split being calculated by the reported logworth. Therefore, the variable that is selected in each split has the highest logworth. In the first split the customers that have a saving balance greater than or equal to 88.869€ are directed to the right node (number of customers, 8014), while the customers that have a saving balance less than 88.869€ or the saving balance is missing are directed to the left node (number of customers, 13075).
 
 **10.** The maximal tree, which is the tree with the highest number of terminal leaves is called ‘Maximal Tree’. In this case, the ‘Maximal Tree’ has 124 terminal leaves. The constructed maximal tree is presented in figure 7.
 
-![image-6.png](attachment:image-6.png)
+![image-6.png](Images/Picture9.png)
 
 An interesting phenomenon is observed in figure 8, where the Misclassification Rate of the ‘Maximal Tree’ in the train and test datasets is presented. As it can be seen, the Misclassification Rate in the training dataset keeps decreasing with the ‘Maximal Tree’ being selected at the lowest Misclassification Rate. On the other hand, in the test dataset, which the constructed tree has not seen before, the performance of the algorithm firstly steadies for a bit and then deteriorates after a certain number of leaves is selected. The phenomenon is known as overfitting and is caused when the model fits too well in the training data but fails to explain the variance of data that has not been previously seen by the model. This phenomenon may cause severe problems in real world applications, and it is advised to be on alert for models that end up overfitting in their training data.
 
-![image-7.png](attachment:image-7.png)
+![image-7.png](Images/Picture10.png)
 
 **11.** The optimal decision tree that was constructed is presented in figure 9 and has 20 terminal leaves. 
 
-![image-8.png](attachment:image-8.png)
+![image-8.png](Images/Picture11.png)
 
 Additionally, the Misclassification Rate of the optimal tree for the train and test dataset is presented in figure 10. As it can be observed, the optimal tree is selected when the Misclassification Rate for the test dataset is at its lowest value. After that point the Misclassification Rate seems to increase, which indicates that model is starting to overfit. 
 
-![image-9.png](attachment:image-9.png)
+![image-9.png](Images/Picture12.png)
 
 **12.** The decision tree model is defined by three characteristics. The first one is the posterior probability, that defines the probability for the observations that are included in the bracket to be part of each category. The second one is the final decision which indicates in which category the observations are classified. The final characteristic is the rules, that defines the threshold on which each Node performs its split until the Terminal Leaf is reached. 
 
-![image-10.png](attachment:image-10.png)
+![image-10.png](Images/Picture13.png)
 
 **13.** The interpretation of the decision tree for non-technical people would be different compared to the previous question. Therefore, it can be said that if a customer has less than 88.869€ in his saving balance account or this information is missing and he has a money market account and he has a certificate of deposit, then the probability that he will purchase a variable annuity is 60.78%, while the probability that he will not purchase a variable annuity is 39.22%. Hence, according to the threshold that has been defined, this customer will purchase a variable annuity.
 
@@ -123,7 +123,7 @@ As it can be seen, if we promote the variable annuity to the 20% of the best cus
 
 For the final model it can be observed, that if we promote the variable annuity to the 20% of the best customers according to the probability that the Neural Network model gives them to purchase the product, the 48.783% of this 20% percent will purchase the variable annuity product. Additionally, if we promote the variable annuity to the 100% of the best customers according to the probability that the Neural Network model gives them to purchase the product, the 30% of this 100% percent will purchase the variable annuity product.
 
-![image-11.png](attachment:image-11.png)
+![image-11.png](Images/Picture14.png)
 
 **15.** In figure 12, the response % for the four constructed graphs is presented. The graph is constructed by sorting the data according to their probabilities to purchase the variable annuity product and then by splitting them in buckets of equal size. The x axis presents those buckets by taking into account the sorted data. To simplify this idea, we will examine the 5th bucket that is between 20%-25% of the best customers according to the constructed models. 
 
@@ -135,7 +135,7 @@ Moreover, if we promote the variable annuity product to the fifth (5th) bucket (
 
 Finally, if we promote the variable annuity product to the fifth (5th) bucket (20%-25%) of the best customers according to the probability that the Neural Network model gives them to purchase the variable annuity, the 36.504% of this bucket will purchase the variable annuity product.  
 
-![image-12.png](attachment:image-12.png)
+![image-12.png](Images/Picture15.png)
 
 **16.** In figure 13 the cumulative lift for the four constructed models is presented. To understand the graph an explanation for the 20% point in the x axis for each model will be provided. Therefore, it can be said that if we promote the variable annuity product to the 20% of the best customers according to the probability that the Optimal Tree model gives them to purchase the variable annuity, we will capture 1.898 times more buyers of the product than if we did the same job without the model i.e., at random.
 
@@ -145,7 +145,7 @@ Moreover, it can be said that if we promote the variable annuity product to the 
 
 Finally, it can be said that if we promote the variable annuity product to the 20% of the best customers according to the probability that the Neural Network model gives them to purchase the variable annuity, we will capture 1.6261 times more buyers of the product than if we did the same job without the model i.e., at random.
 
-![image-13.png](attachment:image-13.png)
+![image-13.png](Images/Picture16.png)
 
 **17.**  In figure 14 the cumulative % captured response for the four constructed models is presented. To understand the graph an explanation for the 40% point in the x axis for each model will be provided. Therefore, if we promote the variable annuity product to the 40% of the best customers according to the probability that the Optimal Tree model gives them to purchase the product, we will capture the 65.956% of all the buyers of the whole validation data set. 
 
@@ -155,15 +155,15 @@ Furthermore, if we promote the variable annuity product to the 40% of the best c
 
 Finally, if we promote the variable annuity product to the 40% of the best customers according to the probability that the Neural Network model gives them to purchase the product, we will capture the 55.568% of all the buyers of the whole validation data set.
 
-![image-14.png](attachment:image-14.png)
+![image-14.png](Images/Picture17.png)
 
 The final model that was selected and was deemed to be the best, was the logistic regression model. The reason behind this selection is that the logistic regression model had the lowest misclassification rate (0.2576) and as it was shown in the previous questions on the assessment plots and their metrics, in general it seemed to perform better compared to the rest of the models. In figure 15, the process flow that was constructed in the SAS software is presented.
 
-![image-15.png](attachment:image-15.png)
+![image-15.png](Images/Picture18.png)
 
 **18.** In figure 16 the total number of customers in the “insurance_campaign_score” dataset is presented based on if the customer is a buyer or a non-buyer. As it can be seen the total number of customers in the dataset is 3,013. Out of those customers, 1,746 of them are predicted by the best model to be non-buyers (57.9%) and 1,267 of them are predicted by the best model to be buyers (42.1%).
 
-![image-16.png](attachment:image-16.png)
+![image-16.png](Images/Picture19.png)
 
 **19.** The biggest probability for a customer to be a buyer based on the model is 0.999994 or 99.99%. While the smallest probability that a customer is assigned by the model as a buyer is 0.272071 or 27.20%.
 
@@ -171,5 +171,5 @@ The final model that was selected and was deemed to be the best, was the logisti
 
 The second and final customer of interest, is the customer with cust_id equal to 29773. This customer has a probability of being a buyer according to the logistic regression model equal to 0.1081 (this information is in the column “Probability for Ins = 1”), which is lower than the threshold that was defined (0.272) and therefore the customer is classified by the model as non-buyer. The basic characteristics of the second customer of interest are that he has not a certificate of deposit, he has not a saving account, the saving balance of his saving account is equal to 0 and he has not a money market account. 
 
-![image-17.png](attachment:image-17.png)
+![image-17.png](Images/Picture20.png)
 
