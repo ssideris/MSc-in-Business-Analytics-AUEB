@@ -116,7 +116,7 @@ dataset_numeric <- dataset[,index]
 round(t(describe(dataset_numeric)),2)
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture1.png)
 
 To emphasize more in variables practical interpretation, we create, in Figure 1, the histogram of each variable. It is observed that temperature is balanced in Washington D.C. throughout the years 2011 and 2012, with medium to high levels of humidity and medium to low speeds of wind. Approximately, 200 rentals of bikes happen every hour from which about 25% are from casual users. 
 
@@ -132,7 +132,7 @@ hist(dataset_numeric[,4], main=names(dataset_numeric[4]), sub="The Histogram of 
 hist(dataset_numeric[,5], main=names(dataset_numeric[5]), sub="The Histogram of variable cnt")
 ```
 
-![image-2.png](attachment:image-2.png)
+![image-2.png](Images/Picture2.png)
 
 Moreover, we create the barplots of binary factor variables in Figure 2. We observe that only a few holidays are included in our sample while days are balanced between 2011 and 2012. 70% of the days are working days.
 
@@ -153,7 +153,7 @@ plot(table(dataset_factor[,6])/n, type='h', main=names(dataset_factor)[6], ylab=
 plot(table(dataset_factor[,8])/n, type='h', main=names(dataset_factor)[8], ylab='Relative frequency', sub="The Plot of Variable weathersit")
 ```
 
-![image-3.png](attachment:image-3.png)
+![image-3.png](Images/Picture3.png)
 
 Finally, we create the Plots for the rest of the factor variables in Figure 3. It is observed that, most rentals happen in spring and summer, during months April, May and July, on days Monday, Wednesday and Saturday and especially on day times 3-5 am, 10-12 pm, 17-19 pm. The weather is mostly good and clear on those days.
 
@@ -168,7 +168,7 @@ barplot(table(dataset_binary_factor$workingday)/n, beside = T, horiz=T, las=1,co
 legend('top', fil=2:3, legend=c('Not Working Day','Working Day'), ncol=2, bty='n',cex=1.5)
 ```
 
-![image-4.png](attachment:image-4.png)
+![image-4.png](Images/Picture4.png)
 
 ### 3. Pairwise comparisons
 
@@ -196,7 +196,7 @@ for(j in 1:4){
 }
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture5.png)
 
 We create the boxplots of factor variables in Figure 6. It is observed that, bike rentals increased in 2012. Weather plays a critical role for bike rentals as users prefer to rent a bike on days with good or slightly bad weather. This happens mostly in seasons spring, summer, autumn and their included months. Users do not seem to have a specific preference between days of the week or holidays, but they clearly prefer renting a bike early in the morning and evening around 7-9 am and 17-19 pm. 
 
@@ -209,7 +209,7 @@ for(j in 1:8){
 }
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture6.png)
 
 ### 4. Predictive or Descriptive Models
 
@@ -257,7 +257,7 @@ model_afterlasso <- lm(cnt~.,data = dataset_afterlasso)
 summary(model_afterlasso)
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture7.png)
 
 We proceed by implementing Stepwise Procedures to find the best covariates for our model. We choose both ways and AIC criterion as it is preferred for predictive models instead of BIC which is preferred for interpretation models. The results, as in Table 3, show that any covariates are excluded from our model as <none> is the one with the lowest AIC value. Lasso implementation has excluded all needed to be excluded covariates.
 
@@ -269,7 +269,7 @@ summary(model_afterstep)
 dataset_afterstep <- dataset_afterlasso
 ```
 
-![image-2.png](attachment:image-2.png)
+![image-2.png](Images/Picture8.png)
 
 The model, now, includes the intercept and variables season, yr, mnth, hr, weathersit, temp and hum against the dependent variable cnt with an adjusted R-squared of 0.67 meaning that 67% of the variance of the dependent variable is explained by our model, as it appears in Table 4 (see Appendix for details). The residual standard error is high and equal to 103.5 meaning that residuals have a high variance of 103.5^2 around the mean. We want to improve our model so that the variance of dependent variable is decreased and explained by at least 70% by our model.
 
@@ -284,7 +284,7 @@ require(car)
 round(vif(model_afterstep),1)
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture9.png)
 
 We perform normality test of residuals by using the Normal QQ Plot of standardized residuals against the theoretical quantiles in Figure 8, Diagram 1. It is observed that the points fall along a line in the middle of the graph but curve off in the extremities. This probably means that residuals have more extreme values than would be expected if they truly came from a normal distribution.
 
@@ -321,7 +321,7 @@ plot(rstudent(model_afterstep), type='l')
 library(car); durbinWatsonTest(model_afterstep)
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture10.png)
 
 As all Assumptions are violated, we proceed on fixing the above problems by transforming our model:
 1.	First, we check our modified dataset for influential points (large residuals and/or high leverage) that affect our model predictions. In Figure 9, it is observed that the top 2 highest in Cooks Distance observations, those with the highest effect on our model for deleting them, are those with index 1267 and 563. We keep them into consideration in case we could not fit our model later.
@@ -337,7 +337,7 @@ n <- 2
 Cooksdist <- as.numeric(tail(row.names(outs[order(outs$CookD), ]), n))
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture11.png)
 
 2.	We perform Box-Cox transformation to find if a transformation of the dependent variable is needed. In Table 9 (see Appendix), it is observed that a transformation of the dependent variable is needed as p-value = 2.22e-16 <0.05, rejecting Ho that no transformation of dependent variable is needed. Also, the Ho that the right transformation for the dependent variable is the logarithmic transformation is rejected. The optimal value of parameter λ is that of 0.1961 ≃ 0.20. We assure our result by performing a transformation test for that value, in Table 10 (see Appendix), where p-value = 0.77 >0.05 accepting our hypothesis. As a result, the dependent variable must be converted to y = (cnt^λ-1)/λ. Trying to avoid this transformation for interpretation reasons, we perform the Box-Cox transformation for our dataset abstracting the 2 influential points we targeted on the step before hoping that the value of λ will change to a more easily interpreted. The results differ slightly but not enough. Nevertheless, for interpretation reasons, we avoid the Box-Cox suggested transformation and we proceed with the logarithmic transformation as λ = 0.2 ≃ 0 affecting our Residual Normality Assumption.
 
@@ -381,7 +381,7 @@ Cooksdist <- as.numeric(tail(row.names(outs[order(outs$CookD), ]), n))
 dataset_afterstep <- dataset_afterstep %>% slice(-c(1269,1278))
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture12.png)
 
 As a conclusion, the model fails to pass the normality of residuals test (Lilliefors’ test p-value= 2.452e-07<0.05; see Table 11 for details) but passes the test of non-constant variance (nvc’s p-value=0.77>0.05; see Table 12 for details), passes test of non-linearity of residuals (Tukey’s test p-value=0.28>0.05; see Table 13 for details) and test of autocorrelation of residuals (Durbin Watson’s test p-value=0.71>0.05; see Table 14 for details). This means that the predictive ability of our model is not the same across the full range of the dependent variable but the differences between predicted and actual values present constant variance, linearity and no patterns on a chronological axis for all the predicted values. The problem of non-Normality of Residuals maybe could be avoided by selecting a high number of samples (n>15) to train our model but as we have only one subset to train it we will proceed by assuming that residuals are following the Normal Distribution for assignment interpretation reasons, even though they are not.
 
@@ -405,7 +405,7 @@ plot(rstudent(final_model), type='l')
 durbinWatsonTest(final_model)
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture13.png)
 
 The equation of our final model, as observed in Table 15 and assuming the Normal Distribution of residuals although it is not corrected, is:
 
@@ -486,7 +486,7 @@ metrics <- data.frame(R2, MAE_2, MAE_3, MAE_4, MAE_5)
 metrics
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture14.png)
 
 ### 5. Further Analysis
 
@@ -518,7 +518,7 @@ boxplot(dataset_numeric[,5]~dataset_factor[,4], xlab=names(dataset_factor)[4], y
 boxplot(dataset_numeric[,5]~dataset_factor[,1], xlab=names(dataset_factor)[1], ylab='Number of Bike Rentals',cex.lab=1.0)
 ```
 
-![image-2.png](attachment:image-2.png)
+![image-2.png](Images/Picture15.png)
 
 A spring day is characterized by medium temperatures of around 20.5°C, with humidity of around 65% and low windspeeds around 20%. The weather is mostly good and if not, it is misty. Bike rentals become higher at 07:00-09:00 am and 15:00-18:00 pm reaching a total, at the end of the day, of 180 (see Figure 12).     
 
@@ -546,7 +546,7 @@ boxplot(dataset_numeric[,5]~dataset_factor[,1], xlab=names(dataset_factor)[1], y
 
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture16.png)
 
 A summer day is characterized by high temperatures of around 31°C, with humidity of around 65% and low windspeeds around 20%. The weather is mostly good and if not, it is misty. Bike rentals become higher at 07:00-09:00 am and 17:00-19:00 pm reaching a total, at the end of the day, of 200 (see Figure 13).     
 
@@ -573,7 +573,7 @@ boxplot(dataset_numeric[,5]~dataset_factor[,4], xlab=names(dataset_factor)[4], y
 boxplot(dataset_numeric[,5]~dataset_factor[,1], xlab=names(dataset_factor)[4], ylab='Number of Bike Rentals',cex.lab=1.0)
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture17.png)
 
 An autumn day is characterized by medium temperatures of around 16°C, with humidity of around 70% and low windspeeds around 15%. The weather is mostly good and if not, it is misty. Bike rentals become higher at 07:00-09:00 am and 16:00-18:00 pm reaching a total, at the end of the day, of 180 (see Figure 14).   
 
@@ -600,7 +600,7 @@ boxplot(dataset_numeric[,5]~dataset_factor[,4], xlab=names(dataset_factor)[4], y
 boxplot(dataset_numeric[,5]~dataset_factor[,1], xlab=names(dataset_factor)[1], ylab='Number of Bike Rentals',cex.lab=1.0)
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture18.png)
 
 ### 6. Conclusion and Discussion
 
@@ -612,25 +612,25 @@ We created a multiple linear regression model with a logarithmic transformation 
 ### 7. Appendix
 
 **Table 2** The ANOVA test between Full Model and Model including only the Constant 
-![image.png](attachment:image.png)
+![image.png](Images/Picture19.png)
 
 **Table 4** Interpretation of the model after step wise procedure
-![image-2.png](attachment:image-2.png)
+![image-2.png](Images/Picture20.png)
 
 **Table 6** Non-constant Variance Score Test
-![image-3.png](attachment:image-3.png)
+![image-3.png](Images/Picture21.png)
 
 **Table 7** Tukey’s Test for Non-linearity of Residuals
-![image-4.png](attachment:image-4.png)
+![image-4.png](Images/Picture22.png)
 
 **Table 8** Darwin-Watson Autocorrelation Test
-![image-5.png](attachment:image-5.png)
+![image-5.png](Images/Picture23.png)
 
 **Table 9** Box Cox power transformation to Normality
-![image-6.png](attachment:image-6.png)
+![image-6.png](Images/Picture24.png)
 
 **Table 10** Box Cox transformation of y Test for goodness of fit
-![image-7.png](attachment:image-7.png)
+![image-7.png](Images/Picture25.png)
 
 **Table 15** The interpretation of final model
-![image-8.png](attachment:image-8.png)
+![image-8.png](Images/Picture26.png)
