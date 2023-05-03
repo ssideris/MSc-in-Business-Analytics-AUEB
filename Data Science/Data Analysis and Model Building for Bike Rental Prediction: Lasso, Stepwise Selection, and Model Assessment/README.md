@@ -5,7 +5,7 @@
 3. [Pairwise Comparisons](#id-3)
 4. [Predictive or Descriptive Models](#id-4)
 5. [Further Analysis](#id-5)
-6. [Conclusions and Discussion](#id-6)
+6. [Conclusions and Discussion](###conclusions-and-discussion)
 7. [Appendix](#id-7)
 
 ### 1. Introduction
@@ -602,7 +602,7 @@ boxplot(dataset_numeric[,5]~dataset_factor[,1], xlab=names(dataset_factor)[1], y
 
 ![image.png](Images/Picture18.png)
 
-### 6. Conclusion and Discussion {#id-6}
+### 6. Conclusion and Discussion
 
 Bike rentals are highly affected by weather conditions. Seasons with mostly good weather and controlled temperature, humidity and windspeed like spring, summer and autumn present higher numbers of bike rentals than in winter. People mostly prefer to rent a bike early in the morning at 06:00-09:00 am and early in the evening 16:00-19:00 pm.
 We created a multiple linear regression model with a logarithmic transformation to predict the bike rentals per hour given specific characteristics of the day. The transformation was not the best choice but helps us to interpretate the model more easily. The model rejects the assumption that residuals are following the Normal distribution leading to problematic credibility for model’s predictions. For all the other assumptions not rejected, we proceeded with the existing model assuming the Normality of residuals for assignment’s interpretation reasons. Our model explains the difference between predicted and actual values by 77%. The model was tested on an out-of-sample dataset and according to the predictions it scored an R squared of 51%.
