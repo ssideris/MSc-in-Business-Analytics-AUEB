@@ -612,25 +612,33 @@ We created a multiple linear regression model with a logarithmic transformation 
 ### 7. Appendix
 
 **Table 2** The ANOVA test between Full Model and Model including only the Constant 
+
 ![image.png](Images/Picture19.png)
 
 **Table 4** Interpretation of the model after step wise procedure
+
 ![image-2.png](Images/Picture20.png)
 
 **Table 6** Non-constant Variance Score Test
+
 ![image-3.png](Images/Picture21.png)
 
 **Table 7** Tukey’s Test for Non-linearity of Residuals
+
 ![image-4.png](Images/Picture22.png)
 
 **Table 8** Darwin-Watson Autocorrelation Test
+
 ![image-5.png](Images/Picture23.png)
 
 **Table 9** Box Cox power transformation to Normality
+
 ![image-6.png](Images/Picture24.png)
 
 **Table 10** Box Cox transformation of y Test for goodness of fit
+
 ![image-7.png](Images/Picture25.png)
 
 **Table 15** The interpretation of final model
+
 ![image-8.png](Images/Picture26.png)
