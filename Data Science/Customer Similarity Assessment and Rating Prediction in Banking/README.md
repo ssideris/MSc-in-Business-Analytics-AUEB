@@ -67,7 +67,7 @@ import pandas as pd
 import numpy as np
 ```
 
-###### Import of the .csv file and missing values management
+##### Import of the .csv file and missing values management
 
 
 ```python
@@ -394,7 +394,7 @@ marketing_campaign.dtypes
 
 
 
-###### There are missing values in the age and the balance variables.
+##### There are missing values in the age and the balance variables.
 
 
 ```python
@@ -558,7 +558,7 @@ marketing_campaign.head(5)
 
 **Task 2**
 
-###### Calculation of dissimilarity between customers in the dataset
+##### Calculation of dissimilarity between customers in the dataset
 
 
 ```python
@@ -864,7 +864,7 @@ def printing_fun(cust_set, customer_index):
 
 **Task 3**
 
-###### Identification of the 10 nearest neighbors for some specific customers
+##### Identification of the 10 nearest neighbors for some specific customers
 
 
 ```python
@@ -1130,7 +1130,7 @@ printing_fun(nn_42000,cust_index)
 
 ##### Customer rating prediction
 
-###### Next we will attempt to predict the customer's ratings based on their nearest neighbors' rating by utilizing different methods.
+##### Next we will attempt to predict the customer's ratings based on their nearest neighbors' rating by utilizing different methods.
 
 
 ```python
@@ -1226,7 +1226,7 @@ def rating_prediction(campaign, customer_index=None):
     return best, avg_rank_of_nn, w_avg_rank_of_nn
 ```
 
-###### Next, we will identify the 10 nearest neighbors of the customer-100 by using the function that does not consider any customer's rating
+##### Next, we will identify the 10 nearest neighbors of the customer-100 by using the function that does not consider any customer's rating
 
 
 ```python
@@ -1259,7 +1259,7 @@ print("The predicted rating of the customer", cust_index, "according to the aver
     The predicted rating of the customer 100 according to the average rating and the weighted average rating of his her 10 nearest neighbors is equal to 2.0 and nan respectively.
     
 
-###### Finally, we will try to predict the rating scores for the first 50 customers in the dataset, according to the two classification methods that consider their 10-nearest neighbors and evaluate their effectiveness by using the Mean Prediction Error metric.
+##### Finally, we will try to predict the rating scores for the first 50 customers in the dataset, according to the two classification methods that consider their 10-nearest neighbors and evaluate their effectiveness by using the Mean Prediction Error metric.
 
 
 ```python
@@ -1296,4 +1296,4 @@ print("Mean Prediction Error for the predictions based on nn-weighted average ra
     Mean Prediction Error for the predictions based on nn-weighted average rating is equal to nan
     
 
-###### It is observed that the weighted average classification method has slightly worse predictions on the customers' ratings. In other words, the average rating score of the nearest customers is a slightly better measure to predict one's true rating. Thus, we can assume that it is a more efficient method to predict any given customer's rating based on the average rating of his/her nearest neighbors-customers. 
+##### It is observed that the weighted average classification method has slightly worse predictions on the customers' ratings. In other words, the average rating score of the nearest customers is a slightly better measure to predict one's true rating. Thus, we can assume that it is a more efficient method to predict any given customer's rating based on the average rating of his/her nearest neighbors-customers. 
