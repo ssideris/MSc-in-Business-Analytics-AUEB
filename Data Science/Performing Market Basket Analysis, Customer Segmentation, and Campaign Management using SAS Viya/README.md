@@ -3,6 +3,8 @@
 2. [Case Study 2 - Customer Segmentation](#case-study-2)
 3. [Case Study 3 - Campaign Management](#case-study-3)
 
+Refer to Description.pdf for the Guidelines.
+
 ### Case Study 1
 
 ### Executive Summary
