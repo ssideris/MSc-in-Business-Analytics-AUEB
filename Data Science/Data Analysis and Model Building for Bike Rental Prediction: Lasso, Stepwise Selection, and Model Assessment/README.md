@@ -1,6 +1,6 @@
 ### Table of Contents
 
-1. [Introduction](#introduction)
+1. [Introduction](###introduction)
 2. [Descriptive Analysis and Exploratory Data Analysis](#id-2)
 3. [Pairwise Comparisons](#id-3)
 4. [Predictive or Descriptive Models](#id-4)
@@ -8,7 +8,7 @@
 6. [Conclusions and Discussion](#id-6)
 7. [Appendix](#id-7)
 
-### 1. Introduction 
+### 1. Introduction
 
 The main purpose of the assignment is to understand what influences bike rentals hourly and predict them to satisfy demand. To do so, we will create a statistical model based on data from the dataset “bike_13.csv” and we will test our model using the dataset “bike_test.csv”. For the purposes of the assignment to highlight the use of multiple linear regression on a dependent variable that follows the Normal Distribution, the multiple linear regression is used, although the most appropriate distribution would be the Poisson Distribution as bike rentals is a discrete non-negative number. The datasets “bike_13.csv” and “bike_test.csv” are random sub-samples extracted from a combination of datasets:
 
