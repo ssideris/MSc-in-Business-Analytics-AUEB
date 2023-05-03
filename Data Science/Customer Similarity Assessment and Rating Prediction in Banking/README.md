@@ -39,20 +39,20 @@ For this assignment you will implement a classification algorithm which, for a g
 customer, will predict his rating (poor, fair, good, very good, excellent) for the bank.
 In order to implement the classification for a given customer you need to:
 
-    1) Calculate the similarities between the given customer and all other customers and
-    compute his 10-nn (most similar) customers. IMPORTANT: In the similarity
-    calculations for this step you need to exclude the customer rating attribute.
-    
-    2) Based only on the 10 most similar customers computed in the previous step, predict
-    the customer rating rank using:
-     The average rating rank of the 10 most similar customers (rounded to the
-    nearest integer).
-     The weighted average rating rank of the 10 most similar customers (rounded
-    to the nearest integer).
-    
-    3) For the evaluation of your classification algorithm you will use the 50 first records
-    of the bank dataset and predict the rating for them. Then, for all n=50 records
-    calculate the Mean Prediction Error for both prediction methods.
+- Calculate the similarities between the given customer and all other customers and
+compute his 10-nn (most similar) customers. IMPORTANT: In the similarity
+calculations for this step you need to exclude the customer rating attribute.
+
+- Based only on the 10 most similar customers computed in the previous step, predict
+the customer rating rank using:
+ The average rating rank of the 10 most similar customers (rounded to the
+nearest integer).
+ The weighted average rating rank of the 10 most similar customers (rounded
+to the nearest integer).
+
+- For the evaluation of your classification algorithm you will use the 50 first records
+of the bank dataset and predict the rating for them. Then, for all n=50 records
+calculate the Mean Prediction Error for both prediction methods.
 
 
 
