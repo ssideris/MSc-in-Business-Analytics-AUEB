@@ -16,7 +16,7 @@ The main purpose of the assignment is to understand what influences bike rentals
 
 •	Weather information are extracted from http://www.freemeteo.com
 
-### Descriptive analysis and exploratory data analysis {#id-2}
+### Descriptive analysis and exploratory data analysis
 
 The dataset “bike_13.csv” consists of 1500 observations of 17 variables of which 13 are of class integer, 4 are of class numeric and 1 of class character. No NAs and blank values exist. The variable names and descriptions are:
 
