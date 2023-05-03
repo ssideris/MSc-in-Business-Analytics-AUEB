@@ -1,14 +1,14 @@
 ### Contents
 
-1. [Introduction]
-2. [Descriptive Analysis and Exploratory Data Analysis]
-3. [Pairwise Comparisons]
-4. [Predictive or Descriptive Models]
-5. [Further Analysis]
-6. [Conclusions and Discussion]
-7. [Appendix]
+1. [Introduction](#id1)
+2. [Descriptive Analysis and Exploratory Data Analysis](#id2)
+3. [Pairwise Comparisons](#id3)
+4. [Predictive or Descriptive Models](#id4)
+5. [Further Analysis](#id5)
+6. [Conclusions and Discussion](#id6)
+7. [Appendix](#id7)
 
-### 1. Introduction
+### 1. Introduction{#id1}
 
 The main purpose of the assignment is to understand what influences bike rentals hourly and predict them to satisfy demand. To do so, we will create a statistical model based on data from the dataset “bike_13.csv” and we will test our model using the dataset “bike_test.csv”. For the purposes of the assignment to highlight the use of multiple linear regression on a dependent variable that follows the Normal Distribution, the multiple linear regression is used, although the most appropriate distribution would be the Poisson Distribution as bike rentals is a discrete non-negative number. The datasets “bike_13.csv” and “bike_test.csv” are random sub-samples extracted from a combination of datasets:
 
@@ -16,7 +16,7 @@ The main purpose of the assignment is to understand what influences bike rentals
 
 •	Weather information are extracted from http://www.freemeteo.com
 
-### 2. Descriptive analysis and exploratory data analysis
+### 2. Descriptive analysis and exploratory data analysis{#id2}
 
 The dataset “bike_13.csv” consists of 1500 observations of 17 variables of which 13 are of class integer, 4 are of class numeric and 1 of class character. No NAs and blank values exist. The variable names and descriptions are:
 
@@ -170,7 +170,7 @@ legend('top', fil=2:3, legend=c('Not Working Day','Working Day'), ncol=2, bty='n
 
 ![image-4.png](Images/Picture4.png)
 
-### 3. Pairwise comparisons
+### 3. Pairwise comparisons{#id3}
 
 We create the correlation Plot and check the correlations between the numeric variables in Figure 4. It is observed that temperature and feeling temperature are highly correlated to each other as their correlation is almost 1. We must take it into consideration to avoid multi-collinearity in our final model. It seems that number of rentals is low correlated to the rest of independent variables as their correlations are much lower than 0.7 but they might play a critical role on our final fitted model.
 
@@ -211,7 +211,7 @@ for(j in 1:8){
 
 ![image.png](Images/Picture6.png)
 
-### 4. Predictive or Descriptive Models
+### 4. Predictive or Descriptive Models{#id4}
 
 We compare the constant model (includes only the intercept as independent variable) to the full model (includes the intercept and all the independent variables of our dataset) via an ANOVA test. It results that p-value is lower than 0.05 so we reject hypothesis H0 that the constant model is statistically more significant than the full model. We will base our final model on the full model. (Anova’s p-value = < 2.2e-16 < 0.05); see Table 2 in Appendix for details.
 We implement Lasso to minimize the number of covariates for our model. To find a reasonable value for λ, we use cross validation. We choose a grid of λ values and compute the cross-validation error rate for each value of λ. We then select the tuning parameter value for which the cross-validation error is smallest and choose the λ that is 1 standard deviation from the minimum value of λ to be more parsimonious and avoid overfitting. In Figure 7, are presented the variables’ coefficients as log λ increases. The intermittent lines show the minimum log λ (on the left) and the log λ 1se from minimum (on the right). For a λ 1se from minimum equal to 2.13, variables holiday, weekday, temp and windspeed are excluded from our model as they are penalized the most.
@@ -488,7 +488,7 @@ metrics
 
 ![image.png](Images/Picture14.png)
 
-### 5. Further Analysis
+### 5. Further Analysis{#id5}
 
 We create the descriptive diagrams for each season and proceed to describe a typical day for each season:
 A winter day is characterized by low temperatures of around 10°C, with humidity of around 40% and low windspeeds around 25%. The weather is mostly good and if not, it is misty. Bike rentals become higher at 07:00-09:00 am and 15:00-18:00 pm reaching a total, at the end of the day, of 90 (see Figure 11).     
@@ -602,14 +602,14 @@ boxplot(dataset_numeric[,5]~dataset_factor[,1], xlab=names(dataset_factor)[1], y
 
 ![image.png](Images/Picture18.png)
 
-### 6. Conclusion and Discussion
+### 6. Conclusion and Discussion{#id6}
 
 Bike rentals are highly affected by weather conditions. Seasons with mostly good weather and controlled temperature, humidity and windspeed like spring, summer and autumn present higher numbers of bike rentals than in winter. People mostly prefer to rent a bike early in the morning at 06:00-09:00 am and early in the evening 16:00-19:00 pm.
 We created a multiple linear regression model with a logarithmic transformation to predict the bike rentals per hour given specific characteristics of the day. The transformation was not the best choice but helps us to interpretate the model more easily. The model rejects the assumption that residuals are following the Normal distribution leading to problematic credibility for model’s predictions. For all the other assumptions not rejected, we proceeded with the existing model assuming the Normality of residuals for assignment’s interpretation reasons. Our model explains the difference between predicted and actual values by 77%. The model was tested on an out-of-sample dataset and according to the predictions it scored an R squared of 51%.
 **If we were to use a different approach creating our model but out of the scope of the assignment, we could follow the Poisson Distribution as bike rentals is a discrete non-negative number, use the log link function and avoid in this way to normalize the residuals as it is not mandatory.**
 
 
-### 7. Appendix
+### 7. Appendix{#id7}
 
 **Table 2** The ANOVA test between Full Model and Model including only the Constant 
 
