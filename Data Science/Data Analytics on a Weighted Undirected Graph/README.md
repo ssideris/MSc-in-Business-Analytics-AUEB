@@ -203,7 +203,7 @@ mean_degree <-  data.frame(date=date,score=sapply(graphs,function(x){mean(degree
 plot1 <- ggplot(vertices, aes(x=date, y=score))+geom_line()+ggtitle("vertices")                                
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture1.png)
 
 Secondly, we calculate the number of edges. The number of edges increases each year, see figure 2, as
 more authors write papers and so the collaborations between them increase. The fluctuation becomes
@@ -214,7 +214,7 @@ more intense from year 2018 to year 2019.
 plot2 <- ggplot(edges, aes(x=date, y=score)) + geom_line()+ggtitle("edges")                                  
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture2.png)
 
 Thirdly, we calculate the diameters. Year 2017 has the shortest distance between the two most distant
 nodes while year 2018 the longest, see figure 3. There is significant fluctuation in all years. 
@@ -224,7 +224,7 @@ nodes while year 2018 the longest, see figure 3. There is significant fluctuatio
 plot3 <- ggplot(diameter, aes(x=date, y=score)) + geom_line()+ggtitle("diameter")                                  
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture3.png)
 
 Finally, we calculate the average degree. Year 2020 has the highest average number of edges per node
 while year 2017 the lowest, see figure 4. Although a decrease is observed from year 2016 to year 2017, a
@@ -235,7 +235,7 @@ steady increase is observed in the next years leading to new highs.
 plot4 <- ggplot(mean_degree, aes(x=date, y=score)) + geom_line()+ggtitle("mean_degree") 
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture4.png)
 
 ### Important Nodes
 
@@ -287,20 +287,20 @@ data.frame(Rank_2019=tail(sort(rank2019$vector),10))
 data.frame(Rank_2020=tail(sort(rank2020$vector),10))
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture5.png)
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture6.png)
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture7.png)
 
 Based on page rank the most important nodes are:
 
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture8.png)
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture9.png)
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture10.png)
 
 ### Communities
 
@@ -393,10 +393,10 @@ plot(plot2020, vertex.label = NA, vertex.size = 3, main='Communities 2020')
 
 ```
 
-![image-2.png](attachment:image-2.png)
+![image-2.png](Images/Picture11.png)
 
-![image-3.png](attachment:image-3.png)
+![image-3.png](Images/Picture12.png)
 
-![image-4.png](attachment:image-4.png)
+![image-4.png](Images/Picture13.png)
 
-![image-5.png](attachment:image-5.png)
+![image-5.png](Images/Picture14.png)
