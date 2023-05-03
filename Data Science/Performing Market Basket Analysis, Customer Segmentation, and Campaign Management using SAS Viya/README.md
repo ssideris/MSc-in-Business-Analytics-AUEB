@@ -1,3 +1,8 @@
+### Table of Contents
+1. [Case Study 1](#case-study-1)
+2. [Case Study 2](#case-study-2)
+3. [Case Study 3](#case-study-3)
+
 ### Case Study 1
 
 ### Executive Summary
