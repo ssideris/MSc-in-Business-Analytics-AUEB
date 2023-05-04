@@ -1,7 +1,7 @@
 # Table of Contents
-[Q1: Explore which Track Features Influence Valence using Inferential Statistics](#1.-explore-which-track-features-influence-valence-using-inferential-statistics)
+[Q1: Explore which Track Features Influence Valence using Inferential Statistics](#explore-which-track-features-influence-valence-using-inferential-statistics)
 
-[Q2: Predict Valence using 3 Machine Learning methods]
+[Q2: Predict Valence using 3 Machine Learning methods](#predict-valence-using-3-machine-learning-methods)
 
 # Scope
 
@@ -688,7 +688,7 @@ data
 
 
 
-# 1. Explore which Track Features Influence Valence using Inferential Statistics
+# Explore which Track Features Influence Valence using Inferential Statistics
 
 ## Descriptive Statistics and Model Choice
 
@@ -1899,7 +1899,7 @@ table
 
 ### We used the ols regression as the only achievable alternative. The assumptions needed are violated and we tried to improve them with target variable square root transformation and polynomial terms but it has no effect. The final model explains the difference between actual and predicted values by 48% but it will fail to fit accurately on different data as assumptions are rejected. The interpretation of the model after all the transformations is very difficult to perform but in general, it seems that danceability, energy (positively) and instrumentalness, liveness (negatively) describe valence the most. 
 
-# Q2: Predict Valence using 3 Machine Learning methods
+# Predict Valence using 3 Machine Learning methods
 
 ### We will take a random sample from the dataset as the computational power of our computer is not enough to handle fast such a size of data for machine learning methods. The sample includes 200.000 observations.
 
