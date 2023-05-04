@@ -13,7 +13,7 @@ The solution of the problem presented, was reached through object-oriented progr
 The first step for the construction of the greedy algorithm, was the creation of a ‘Solver’ class. The ‘Solver’ class contains information for all the nodes, the customers, the distance matrix, profit ratio, the time capacity constraint, an empty solution and a class that initializes a nearest neighbor solution algorithm. The algorithm inspects all the customers (nodes) that can fit (considering that the vehicle must return to the warehouse) in the open routes, selects the one with the greatest value in the profit matrix and stores them and their best route. Upon inspecting all the customers, the warehouse is inserted at the last position of each route and the cost is updated with the time spend to travel from the last customer of each route to the
 warehouse.
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture1.png)
 
 ### Local Searches
 
@@ -22,19 +22,19 @@ and the new routes are printed.
 
 The first local search performed is ‘Relocation’. The aim of this local search is to minimize the solution’s total cost by relocating covered customers from their current position in the route to another (this is not limited to the route of the vehicle that currently serves the customer but all the possible routes that can feasibly serve him). It is observed that the relocation local search iterated 15 times, the profit remained constant (as expected) and the total cost dropped approximately by 29 (from 735 to 706) time units.
 
-![image-2.png](attachment:image-2.png)
+![image-2.png](Images/Picture2.png)
 
 The second local search performed is ‘Swap’. The aim of this local search is to minimize the solution’s total cost by swapping the position of any pair of covered customers (in the same or different routes), while not violating the capacity constraint for each vehicle examined. It is noticed that only 3 iterations were performed with this local search, the profit remains constant (as expected) and the solution’s total cost dropped approximately by 9 (from 735 to 726) time units.
 
-![image-3.png](attachment:image-3.png)
+![image-3.png](Images/Picture3.png)
 
 The third local search performed is the ‘Insertion’. The aim of this local search is to maximize the profit per cost ratio of the solution by examining all the possible insertion positions in the current solution for all uncovered customers. The customer selected is the one with the best profit to cost ratio that does not violate the capacity constraint of the route they will be inserted to. It is noticed that this local search method was unable to locate any better neighbor solution. As a result, the solution’s cost and profit remain constant.
 
-![image-4.png](attachment:image-4.png)
+![image-4.png](Images/Picture4.png)
 
 The final local search performed is the ‘Profitable Swap’. The aim of this local search is to maximize the profit per cost ratio of the solution by replacing any covered customer in the current solution with any uncovered customer. For each possible swap the time constraint for each vehicle is taken into consideration. It is observed that this local search also failed to locate any better neighbor solution. Hence, the solution’s cost and profit also remain unchanged.
 
-![image-5.png](attachment:image-5.png)
+![image-5.png](Images/Picture5.png)
 
 ### Variable Neighborhood Descent - VND
 
@@ -50,6 +50,6 @@ Variable Neighborhood Descent is an algorithmic framework for solving combinator
 
 This specific permutation of local searches leads to 23 applications of the mentioned move types that result to an increase of the solution’s total time by almost 4 time units and to an increase of the solution’s profit by 41 profit units. For exhibition purposes, an additional example of a VND application is provided that utilizes all the local searches that have been created (table 7).
 
-![image-6.png](attachment:image-6.png)
+![image-6.png](Images/Picture6.png)
 
-![image-7.png](attachment:image-7.png)
+![image-7.png](Images/Picture7.png)
