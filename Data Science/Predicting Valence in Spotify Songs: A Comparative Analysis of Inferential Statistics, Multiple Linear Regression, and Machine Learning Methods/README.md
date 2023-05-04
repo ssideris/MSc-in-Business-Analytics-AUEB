@@ -688,7 +688,7 @@ data
 
 
 
-# Q1: Explore which Track Features Influence Valence using Inferential Statistics
+#Q1: Explore which Track Features Influence Valence using Inferential Statistics
 
 ## Descriptive Statistics and Model Choice
 
