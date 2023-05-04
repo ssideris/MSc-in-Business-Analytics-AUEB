@@ -129,7 +129,7 @@ rowMeans(accuracy)
 boxplot(t(accuracy),ylab='predictive accuracy', xlab='method', main="Accuracy")
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture1.png)
 
 # 4. Clustering
 
@@ -191,7 +191,7 @@ rect.hclust(hc1, k=3, border="red")
 cutree(hc1, k = 3)
 ```
 
-![image.png](attachment:image.png)
+![image.png](Images/Picture2.png)
 
 To evaluate the 2 cases, we will plot the Silhouette Diagrams of the 2 cases, in Figure 3. In a Silhouette Diagram, it is observed the number of clusters and the number of observations each cluster includes as well as the average width per cluster and the total average width. Observations with close to 1 width are well classified, for close to 0 width could belong to any of the clusters and for negative width are falsely classified. A small number of observations is falsely classified and specifically 28 for 2 clusters and 31 for 3 clusters. The overall average width is almost identical for both cases as it is 0.27 for k=2 and 0.25 for k=3. At the same time, all the clusters include a significant number of observations. As the overall average width is slightly lower for k=3 we will proceed with 3 clusters. 
 
@@ -208,7 +208,7 @@ sum(silhouette(x=cutree(hc1, k = 3), dist=distance_mat)<0)
 
 ```
 
-![image-2.png](attachment:image-2.png)
+![image-2.png](Images/Picture3.png)
 
 To evaluate if the clustering has any correlation to if the client subscribed for the product or not, we will use the Adjusted Rand Index and compare the clusters we found to the hypothetical 2 clusters created by the variable SUBSCRIBED (if subscribed or not). The ARI is equal to 0.12 meaning that a very low correlation exists between the clusters we found and the variable SUBSCRIBED and so if someone subscribed or not does not have any importance for our clusters.
 
