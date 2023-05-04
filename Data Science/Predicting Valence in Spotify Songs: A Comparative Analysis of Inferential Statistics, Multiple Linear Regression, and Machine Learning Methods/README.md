@@ -1,5 +1,6 @@
 # Table of Contents
 [Q1: Explore which Track Features Influence Valence using Inferential Statistics](#q1:-explore-which-track-features-influence-valence-using-inferential-statistics)
+
 [Q2: Predict Valence using 3 Machine Learning methods]
 
 # Scope
