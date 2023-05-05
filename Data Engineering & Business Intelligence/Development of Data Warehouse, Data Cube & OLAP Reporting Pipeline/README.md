@@ -180,7 +180,7 @@ Job Activity Monitor Creation
 
 ![image-14.png](Images/Picture14.png)
 
-##Data Cube Deployment
+## Data Cube Deployment
 
 We created a Multidimensional Analysis Services project in SSIS and connected it to our SQL Server relational database to create a cube with the help of Cube Wizard. Our final 
 cube Schema is the following:
